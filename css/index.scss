@@ -1,0 +1,531 @@
+@charset "UTF-8";
+@function data($num){
+  @return $num/20;
+}
+@mixin ell($a){
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:$a;
+  line-clamp:$a;
+}
+*{
+  padding: 0;
+  margin: 0;
+}
+body{
+  background: #F6F6F6;
+}
+
+#main{
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+//搜索框部分开始
+#search{
+  width: 100%;
+  height: data(40rem);
+  background: #fff;
+  position: relative;
+  .search-inner{
+    width: 85%;
+    height: data(25rem);
+    margin: data(7rem) 7%;
+    position: absolute;
+    b{
+      font-family: iconfont;
+      color: #B3B3B3;
+      width: data(20rem);
+      height: data(20rem);
+    }
+    b:nth-child(1){
+      float: left;
+    }
+    b.car{
+      position: absolute;
+      right: 0;
+    }
+    div{
+      width: 80%;
+      height: data(25rem);
+      background: #eeeeee;
+      //float: left;
+      position: absolute;
+      border-radius: data(5rem);
+      left: data(28rem);
+      b{
+        float: right;
+        width: data(12rem);
+        height: data(16rem);
+        margin: 0 10px;
+      }
+      input{
+        float: left;
+        height: 100%;
+        font-size: 12px;
+        color: gray;
+        border: none;
+        outline: none;
+        background: #eeeeee;
+        position: absolute;
+        left: data(40rem);
+        top: data(0rem);
+      }
+    }
+  }
+}
+//搜索框部分结束
+
+//幻灯片部分开始
+#photoChang{
+  width: 100%;
+  height: data(200rem);
+  position: relative;
+  cursor: pointer;
+  .igs{
+    width: 100%;
+    img{
+      width: 100%;
+      height: data(200rem);
+      position: absolute;
+    }
+  }
+  .tabs{
+    width: data(150rem);
+    position: absolute;
+    height: data(30rem);
+    bottom: 0;
+    margin: 0 data(15rem);
+    .tab{
+      width: data(10rem);
+      height: data(10rem);
+      background: white;
+      border-radius: 50%;
+      float: left;
+      margin: data(5rem);
+    }
+    .bg{
+      background: #000;
+    }
+  }
+}
+//幻灯片部分结束
+
+//领券部分开始
+#coupons{
+  width: 100%;
+  height: data(110rem);
+  background: #FFFFFF;
+  ul{
+    display: flex;
+    justify-content: space-around;
+    li{
+      list-style: none;
+      //float: left;
+      //margin: data(10rem) 0;
+      border-right: 1px solid #eeeeee;
+      text-align: center;
+      width: data(105rem);
+      height: data(100rem);
+      flex: 1;
+      h2{
+        color: #FF7C2C;
+        font-size: data(14rem);
+        margin: data(5rem) 0;
+        @include ell(1);
+      }
+      p{
+        color: #6C6F74;
+        font-size: data(14rem);
+        margin: data(5rem) 0;
+        @include ell(1);
+      }
+      img{
+        width: data(43rem);
+        height: data(43rem);
+      }
+    }
+    li:last-child{
+      border-right: none;
+    }
+  }
+}
+//领券部分结束
+
+//倒计时部分开始
+#timeLetter{
+  width: 100%;
+  height: data(160rem);
+  //border: 1px solid black;
+  margin: data(10rem) 0;
+  background: #FFFFFF;
+  .time{
+    width:90%;
+    height: data(40rem);
+    margin: 0 auto;
+    .interTime{
+      width: data(190rem);
+      height: data(40rem);
+      float: left;
+      font-size: data(14rem);
+      line-height: data(40rem);
+      b{
+        float: right;
+        width: data(65rem);
+        height: data(20rem);
+        background: #000000;
+        color: yellow;
+        line-height: data(20rem);
+        margin-top: data(12rem);
+      }
+    }
+    .more{
+      float: right;
+      color: gray;
+      height: data(40rem);
+      line-height: data(40rem);
+      font-size: data(14rem);
+      b{
+        font-family: iconfont;
+        font-size: data(20rem);
+        color: #999999;
+      }
+    }
+  }
+  .timePro{
+    width: 100%;
+    height: data(120rem);
+    display: flex;
+    justify-content: space-around;
+    div{
+      overflow: hidden;
+      width: data(100rem);
+      text-align: center;
+      margin: 0 data(5rem);
+      img{
+        width: data(51rem);
+        height: data(51rem);
+      }
+      p{
+        @include ell(1);
+        font-size:data(12rem);
+      }
+      span{
+        color: #F50A3E;
+        font-size:data(12rem);
+      }
+      del{
+        color: #808080;
+        font-size:data(10rem);
+      }
+    }
+  }
+}
+//倒计时部分结束
+
+//超实惠，促销直达部分开始
+#hotSale{
+  width: 100%;
+  height: data(280rem);
+  background: #FFFFFF;
+  margin-top: data(10rem);
+  .hotSale-title{
+    width: 100%;
+    height: data(35rem);
+    color: #000000;
+    font-size: data(20rem);
+    line-height: data(35rem);
+    padding: 0 data(10rem);
+  }
+  .womenHot{
+    width: 100%;
+    height: data(135rem);
+    border-bottom: 1px solid #E8E8E8;
+    border-top: 1px solid #E8E8E8;
+    display: flex;
+    justify-content: space-around;
+    .womenHot-left{
+      width: 49.6%;
+      height: 100%;
+      border-right: 1px solid #E8E8E8;
+      text-align: center;
+      //float: left;
+      flex: 1;
+      h2{
+       padding: data(10rem) 0 0 0;
+       font-size: data(14rem);
+        @include ell(1);
+      }
+      p{
+        font-size: data(12rem);
+        color: #F50A3E;
+        @include ell(1);
+      }
+      a{
+        text-decoration: none;
+      }
+      img{
+        width: data(110rem);
+        height: data(85rem);
+      }
+    }
+    .womenHot-right{
+      width: 50%;
+      height: 100%;
+      float: right;
+      position: relative;
+      .womenHot-rightT{
+        width: 100%;
+        height: 49.8%;
+        border-bottom: 1px solid #E8E8E8;
+        position: absolute;
+        top: 0;
+        h2{
+          padding: data(10rem) 0 0 data(10rem);
+          font-size: data(14rem);
+          @include ell(1);
+        }
+        p{
+          font-size: data(12rem);
+          color: #F50A3E;
+          padding: 0 0 0 data(10rem);
+          @include ell(1);
+        }
+        a{
+          text-decoration: none;
+        }
+        img{
+          width: data(55rem);
+          height: data(65rem);
+          position: absolute;
+          top: 0;
+          right: data(5rem);
+        }
+      }
+      .womenHot-rightB{
+        width: 100%;
+        height: 50%;
+        position: absolute;
+        bottom: 0;
+        h2{
+          padding: data(10rem) 0 0 data(10rem);
+          font-size: data(14rem);
+          @include ell(1);
+        }
+        p{
+          font-size: data(12rem);
+          color: #F50A3E;
+          padding: 0 0 0 data(10rem);
+          @include ell(1);
+        }
+        a{
+          text-decoration: none;
+        }
+        img{
+          width: data(55rem);
+          height: data(65rem);
+          position: absolute;
+          bottom: 0;
+          right: data(5rem);
+        }
+      }
+    }
+  }
+  .hotSale-bottom{
+    width: 100%;
+    height: data(108rem);
+    display: flex;
+    justify-content: space-around;
+    div{
+      flex: 1;
+      text-align: center;
+      border-right: 1px solid #eeeeee;
+      h2{
+        padding: data(5rem) 0 0 0;
+        font-size: data(14rem);
+        @include ell(1);
+      }
+      p{
+        font-size: data(12rem);
+        color: #F50A3E;
+        @include ell(1);
+      }
+      a{
+        text-decoration: none;
+      }
+      img{
+        width: data(65rem);
+        height: data(65rem);
+      }
+    }
+    div:last-child{
+      border-right: none;
+    }
+  }
+}
+//超实惠，促销直达部分结束
+
+//女装套装，U质拼团，配饰团部分开始
+#girlTuan{
+  width: 100%;
+  overflow: hidden;
+  margin-top: data(10rem);
+  display: flex;
+  justify-content: space-around;
+  a{
+    text-decoration: none;
+    img{
+      width: data(98rem);
+      height: data(68rem);
+    }
+  }
+}
+//女装套装，U质拼团，配饰团部分结束
+
+//热门市场部分开始
+#hotMarket{
+  width: 100%;
+  height: data(350rem);
+  //border: 1px solid black;
+  background: #FFFFFF;
+  margin-top: data(-4rem);
+  .hotMarket-title{
+    background: url("../img/hmarket.png") no-repeat center center;
+    background-size: 40% auto;
+    color: #333;
+    font-size: 0.3rem;
+    height: 0.4rem;
+    line-height: 0.4rem;
+    text-align: center;
+    margin: 0 0 0.2rem 0;
+    padding: data(20rem);
+  }
+  .clothType-all{
+    width: 100%;
+    height: data(328rem);
+    .clothType{
+      width: 25%;
+      height: data(71rem);
+      text-align: center;
+      float: left;
+      a{
+        text-decoration: none;
+        img{
+          width: data(51rem);
+          height: data(51rem);
+        }
+        p{
+          font-size: data(12rem);
+          color: #333333;
+          @include ell(1);
+        }
+      }
+    }
+  }
+}
+//热门市场部分结束
+
+//猜你喜欢部分开始
+#youLove{
+  width: 100%;
+  overflow: hidden;
+  .youLove-title{
+    background: url("../img/hmarket.png") no-repeat center center;
+    background-size: 40% auto;
+    color: #333;
+    font-size: 0.3rem;
+    height: 0.4rem;
+    line-height: 0.4rem;
+    text-align: center;
+    margin: 0 0 0.2rem 0;
+    padding: data(20rem);
+  }
+  .youLove-all{
+    width: 100%;
+    overflow: hidden;
+    .ylSon{
+     width: 48%;
+     height: data(275rem);
+     background: #FFFFFF;
+     float: left;
+     margin: data(3rem);
+     border-top-left-radius: data(5rem);
+     border-top-right-radius: data(5rem);
+      position: relative;
+     a{
+       text-decoration: none;
+       img{
+         width:100%;
+         height: data(200rem);
+       }
+       .fd{
+         width: data(36rem);
+         height: data(36rem);
+         position: absolute;
+         top: data(160rem);
+         right: data(5rem);
+       }
+       .loveIntro{
+         width: 95%;
+         margin: 0 auto;
+         height: data(36rem);
+         //@include ell(2);
+         span{
+           font-size: data(10rem);
+           color: #5A6F7A;
+           background: #EFF3F6;
+         }
+       }
+       .lovePrice{
+         width: 95%;
+         margin: 0 auto;
+         height: data(40rem);
+         line-height:data(45rem);
+         p:nth-child(1){
+           font-size: data(14rem);
+           font-weight: bold;
+           color: #000;
+           float: left;
+         }
+         p:nth-child(2){
+           font-size: data(14rem);
+           color: #808080;
+           float: right;
+         }
+       }
+     }
+     b{
+       font-family: iconfont;
+       color: grey;
+       font-size: data(14rem);
+       margin: 0 0 0 data(3rem);
+     }
+   }
+  }
+}
+//猜你喜欢部分结束
+
+//首页底部部分开始
+#homeFooter{
+  width: 100%;
+  height: data(65rem);
+  background: #FFFFFF;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  a{
+    text-decoration: none;
+    img{
+      width: data(20rem);
+      height: data(20rem);
+      margin: data(5rem) 0 0 0;
+    }
+    p{
+      font-size: data(14rem);
+      color: #6B6B6B;
+    }
+  }
+}
+//首页底部部分结束
